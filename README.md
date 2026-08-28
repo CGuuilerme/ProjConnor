@@ -10,11 +10,11 @@ Ainda em desenvolvimento.
 
 ## Versão
 
-V0.1
+V0.15
 
 ## Funcionalidades atuais
 
-Adição do saldo inteiro + adiçãoque soma com o saldo já existente.
+Sistema de menu e registro de despesas
 
 ## Tecnologias
 
@@ -26,7 +26,7 @@ Evoluções planejadas: banco de dados, interface web e integração com IA.
 
 ## aprendizados
 
-Aprendi como usar de forma certa if, elif e else, além de de fato, mergulhar no Python para aprender mais.
+aprendizado como usar de forma certa if, elif, else e while além de de fato, mergulhar no Python para aprender mais.
 
 ## Autor
 
