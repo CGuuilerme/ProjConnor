@@ -17,11 +17,14 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
-      - name: Extract source
+      - name: Rebuild source
         shell: pwsh
         run: |
+          $parts = Get-ChildItem source-chunk-*.txt | Sort-Object Name
+          $b64 = ($parts | ForEach-Object { Get-Content $_.FullName -Raw }) -join ''
+          [IO.File]::WriteAllBytes('mipa-source.tar.gz', [Convert]::FromBase64String($b64))
           New-Item -ItemType Directory -Path work -Force | Out-Null
-          tar -xf mipa-source.zip -C work
+          tar -xzf mipa-source.tar.gz -C work
       - name: Publish Windows x64
         shell: pwsh
         run: dotnet publish work/MultiInstancePokeAI/src/MultiInstancePokeAI.UI/MultiInstancePokeAI.UI.csproj -c Release -r win-x64 --self-contained true -o publish
