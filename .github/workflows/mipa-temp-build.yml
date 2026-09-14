@@ -25,6 +25,15 @@ jobs:
           [IO.File]::WriteAllBytes('mipa-source.tar.gz', [Convert]::FromBase64String($b64))
           New-Item -ItemType Directory -Path work -Force | Out-Null
           tar -xzf mipa-source.tar.gz -C work
+      - name: Apply compile fix
+        shell: pwsh
+        run: |
+          $p = 'work/MultiInstancePokeAI/src/MultiInstancePokeAI.UI/GameDataHubWindow.cs'
+          $old = '        var neverSell=new CheckBox{Content="NEVER SELL",Margin=new Thickness(6)},neverTrade=new CheckBox{Content="NEVER TRADE",Margin=new Thickness(6)},neverDelete=new CheckBox{Content="NEVER DELETE",Margin=new Thickness(6)},neverModify=new CheckBox{Content="NEVER MODIFY",Margin=new Thickness(6)};'
+          $new = "        var neverSell=new CheckBox{Content=`"NEVER SELL`",Margin=new Thickness(6)};`n        var neverTrade=new CheckBox{Content=`"NEVER TRADE`",Margin=new Thickness(6)};`n        var neverDelete=new CheckBox{Content=`"NEVER DELETE`",Margin=new Thickness(6)};`n        var neverModify=new CheckBox{Content=`"NEVER MODIFY`",Margin=new Thickness(6)};"
+          $src = Get-Content $p -Raw
+          $src = $src.Replace($old, $new)
+          Set-Content -Path $p -Value $src -Encoding utf8
       - name: Publish Windows x64
         shell: pwsh
         run: dotnet publish work/MultiInstancePokeAI/src/MultiInstancePokeAI.UI/MultiInstancePokeAI.UI.csproj -c Release -r win-x64 --self-contained true -o publish
