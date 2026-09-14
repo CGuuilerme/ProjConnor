@@ -1,0 +1,1 @@
+trigger MultiInstancePokeAI v0.5 Windows build
