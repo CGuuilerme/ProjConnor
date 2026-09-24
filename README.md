@@ -10,11 +10,11 @@ Ainda em desenvolvimento.
 
 ## Versão
 
-V0.15
+V0.16
 
 ## Funcionalidades atuais
 
-Sistema de menu e registro de despesas
+Sistema de interação com o usuário, adição de saldo, registro de despesas, validação de saldo disponível e consulta de saldo atual.
 
 ## Tecnologias
 
@@ -22,12 +22,8 @@ Python
 
 ## Objetivos Futuros
 
-Evoluções planejadas: banco de dados, interface web e integração com IA.
+Evoluções planejadas: Melhorar a orgnização e estrutura do código, implementar histórico de transações, adicionar descrição e categorias às despesas e receitas, criar resumo de entradas e saídas, implementar armazenamento permanente dos dados e futuramente integrar recursos de inteligencia artificial para análise financeira. 
 
-## Aprendizados
-
-aprendizado como usar de forma certa if, elif, else e while, mergulhar no Python para aprender mais.
-
-## Autor
+## Autor 
 
 Guilherme Coelho + https://www.linkedin.com/in/guilherme-coelho-2449243b7/ + https://www.instagram.com/proj_connor/
