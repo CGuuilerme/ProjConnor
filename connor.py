@@ -35,5 +35,3 @@ while True:
         print(f"Saldo atual: R${saldo:.2f}")
     else:
         print("Opção inválida, tente novamente.")
-
-print(menu())
