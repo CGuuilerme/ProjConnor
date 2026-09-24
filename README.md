@@ -26,7 +26,7 @@ Evoluções planejadas: banco de dados, interface web e integração com IA.
 
 ## Aprendizados
 
-aprendizado como usar de forma certa if, elif, else e while além de fato, mergulhar no Python para aprender mais.
+aprendizado como usar de forma certa if, elif, else e while, mergulhar no Python para aprender mais.
 
 ## Autor
 
